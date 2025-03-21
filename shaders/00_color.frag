@@ -2,18 +2,16 @@
 precision mediump float;
 
 /**
- * \file
- * \author Rudy Castan
- * \author TODO Your Name
- * \date 2025 Spring
- * \par CS250 Computer Graphics II
- * \copyright DigiPen Institute of Technology
- */
-
-
+* \file
+* \author Rudy Castan
+* \author Deokwoo Seo
+* \date 2025 Spring
+* \par CS250 Computer Graphics II
+* \copyright DigiPen Institute of Technology
+*/
 out vec4 FragColor;
 
 void main()
 {
-    FragColor = vec4(1., 0., 0., 1.0);
+    FragColor=vec4(0.,.8,1.,1.);
 }
