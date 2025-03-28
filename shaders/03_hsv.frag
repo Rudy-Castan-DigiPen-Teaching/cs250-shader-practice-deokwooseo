@@ -1,4 +1,3 @@
-// unique_hsv.frag
 #ifdef GL_ES
 precision mediump float;
 #endif
@@ -18,7 +17,7 @@ uniform float u_time;
 
 vec3 hsv2rgb(in vec3 c){
     vec3 rgb=clamp(
-        abs(mod(c.x*6.+vec3(0.,4.,2.),6.)-3.)-1.,
+        abs(mod(c.x*6.+vec3(0.,4,2.),6.)-3.)-1.,
         0.,
         1.
     );
