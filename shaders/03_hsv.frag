@@ -1,6 +1,5 @@
-#ifdef GL_ES
+#version 300 es
 precision mediump float;
-#endif
 
 /**
 * \file
@@ -17,7 +16,7 @@ uniform float u_time;
 
 vec3 hsv2rgb(in vec3 c){
     vec3 rgb=clamp(
-        abs(mod(c.x*6.+vec3(0.,4,2.),6.)-3.)-1.,
+        abs(mod(c.x*6.+vec3(0.,4.,2.),6.)-3.)-1.,
         0.,
         1.
     );
@@ -25,22 +24,18 @@ vec3 hsv2rgb(in vec3 c){
     return c.z*mix(vec3(1.),rgb,c.y);
 }
 
+out vec4 fragColor;
+
 void main(){
     vec2 uv=(gl_FragCoord.xy/u_resolution.xy)*2.-1.;
     uv.x*=u_resolution.x/u_resolution.y;
-    
     float angle=atan(uv.y,uv.x);
     float radius=length(uv);
-    
     float twist=u_time*.5*radius;
     angle+=twist;
-    
     float hue=(angle/TWO_PI)+.5;
-    
     float saturation=abs(sin(u_time+radius*10.));
-    
     float brightness=1.-smoothstep(0.,1.,radius);
-    
     vec3 color=hsv2rgb(vec3(hue,saturation,brightness));
-    gl_FragColor=vec4(color,1.);
+    fragColor=vec4(color,1.);
 }
