@@ -1,4 +1,3 @@
-// unique_hsv.frag
 #ifdef GL_ES
 precision mediump float;
 #endif
