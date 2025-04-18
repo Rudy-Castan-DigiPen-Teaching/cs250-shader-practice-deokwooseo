@@ -8,4 +8,4 @@
 
 [Hsv Example](draw.html?shader=03_hsv.frag)
 
-[Shapes Example](draw.html?shader=04.shapes.frag)
+[Shapes Example](draw.html?shader=04_shapes.frag)
